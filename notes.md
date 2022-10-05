@@ -146,3 +146,7 @@
 
 En el contexto de un formulario principal, a menudo no es necesario incluir enlaces unidireccionales o bidireccionales, ya que el formulario principal se encarga de su  sincronizacion
 ```
+
+## ngIf y su bloque else
+
+- Para entrar en mas detalles sobre este tema he encontrado un blog que resulta particularmente util donde se evidencia el uso que puede llegar a tener ngIf con la directiva ng-template y ng-container ----> [Angular Templates: las directivas ng-template, ng-container y ngTemplateOutlet](https://profile.es/blog/angular-templates-las-directivas-ng-template-ng-container-y-ngtemplateoutlet/)
