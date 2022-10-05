@@ -51,3 +51,60 @@
     - Enlace unidireccional [] para enlazar desde la capa logica (component.ts) a la vista (html).
     - Enlace unidireccional () para enlazar de la vista (html) a la capa logica (component.ts).
     - Enlace bidireccional [()] para enlazar una secuencia de vista bidireccional a la capa logica (component.ts).
+
+## Otros eventos que podemos escuchar
+
+- Una forma común de manejar eventos es pasar el “objeto de evento” $event, donde se capturan eleentos del DOM, por lo general este evento contiene la informacion que debemos procesar en el metodo.
+
+- Conviene conocer los objetos del evento DOM Event reference
+
+- Tenga en cuenta el contexto de ejecución
+
+- Las propiedades de un $event (objeto) varían según el tipo de evento DOM. Por ejemplo, un evento de mouse incluye información diferente a la de un evento de edición de cuadro de entrada.
+
+- Podemos escuchar el scroll con el siguiente codigo
+```
+  //en el html
+  <div class="box" (scroll)="onScroll($event)"></div>
+  // en la capa logica
+  onScroll(event: Event) {
+    const element = event.target as HTMLElement;
+    console.log(element.scrollTop);
+  }
+```
+- Podemos leer las teclas que se estan digitando a medida que estas son digitadas, esto lo hacemos con el sigiente codigo
+```
+  // en el html
+  <input type="text" [value]="person.name" (keyup)="onKeyUp($event)" />
+  <p>Name {{ person.name }}</p>
+  // en la capa logica
+  onKeyUp(event: Event) {
+  const element = event.target as HTMLInputElement;
+  this.person.name = element.value;
+  }
+```
+- Use un tipo de datos espesifico (no any) que pueda revelar las propiedades del objeto asociado al evento
+```
+  // sin informacion de tipo ... simplifica el código al costo de no saber las propiedades del evento
+  onK(event: any) {
+    this.values += event.target.value + ' | ';
+  }
+  // define un tipo de dato para el evento que estamos capturando, lo que nos permite utilizar las propiedades adecuadas para el objeto
+  onKey(event: KeyboardEvent) {
+  this.values += (event.target as HTMLInputElement).value + ' | ';
+  }
+  // No todos los elementos tienen una value propiedad, por lo que se convierte target en un elemento de entrada. El método onKey expresa más claramente lo que espera y cómo debera interpretar el evento.
+```
+- Tambien puedes capturar teclas como Ctr, Alt, Shift y sus conbinaciones
+```
+  <input (keyup.control)='...respond to ctrl/control...' />
+  <input (keyup.alt)='...respond to alt/option...' />
+  <input (keyup.shift)='...respond to shift...' />
+  <input (keyup.meta)='...respond to command...' />
+  <input (keydown.control.shift.z)='...'/>
+  <input (keyup.enter)='...responds to enter...' />
+  <input (keydown.esc)='...responds to escape...' />
+  <input (keyup.shift.f)='...responds to shift+f...' />
+```
+- Al utilizar el “$event” tenga en cuenta que este muestra mas infomacion de la necesaria, lo que rompe “la separacion de responsabilidaes” entre la plantilla ( lo que ve el usuario ) y el componente ( cómo la aplicación procesa los datos del usuario ), es mejor usar variables de referencia en la capa logica (componente) para abordar este problema.
+
