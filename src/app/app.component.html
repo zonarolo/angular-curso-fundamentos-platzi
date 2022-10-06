@@ -1,3 +1,17 @@
+<h1>ngSwitch</h1>
+<input type="text" [(ngModel)]="person.name" required />
+<div [ngSwitch]="person.name">
+  <p *ngSwitchCase="'juan'"> La persona es Juan</p>
+  <p *ngSwitchCase="'julian'"> La persona es Julian</p>
+  <p *ngSwitchCase="'camilo'"> La persona es Camilo</p>
+  <p *ngSwitchDefault>No hace match</p>
+</div>
+<!-- <p *ngIf="person.name === 'juan'"> La persona es Juan</p>
+<p *ngIf="person.name === 'julian'"> La persona es Julian</p>
+<p *ngIf="person.name === 'camilo'"> La persona es Camilo</p> -->
+
+<hr>
+
 <h1>ngFor Objs</h1>
 <div>
   <div *ngFor="let product of products">

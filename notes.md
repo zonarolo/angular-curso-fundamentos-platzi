@@ -156,3 +156,8 @@ En el contexto de un formulario principal, a menudo no es necesario incluir enla
 
 ## ngFor Objs
 [ngFor and For loop over objects or Array in Angular](https://readerstacks.com/ngfor-and-for-loop-over-object-or-array-in-angular/)
+
+## ngSwtch
+
+[ngSwitch Docs from Angular](https://angular.io/api/common/NgSwitch)
+
