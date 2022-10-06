@@ -150,3 +150,9 @@ En el contexto de un formulario principal, a menudo no es necesario incluir enla
 ## ngIf y su bloque else
 
 - Para entrar en mas detalles sobre este tema he encontrado un blog que resulta particularmente util donde se evidencia el uso que puede llegar a tener ngIf con la directiva ng-template y ng-container ----> [Angular Templates: las directivas ng-template, ng-container y ngTemplateOutlet](https://profile.es/blog/angular-templates-las-directivas-ng-template-ng-container-y-ngtemplateoutlet/)
+
+## ngFor
+[Angular ngFor la directiva y sus opciones](https://www.arquitecturajava.com/angular-ngfor-y-sus-opciones/)
+
+## ngFor Objs
+[ngFor and For loop over objects or Array in Angular](https://readerstacks.com/ngfor-and-for-loop-over-object-or-array-in-angular/)
