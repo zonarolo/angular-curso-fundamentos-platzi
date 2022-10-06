@@ -4,3 +4,31 @@
   overflow: auto;
   background-color: red;
 }
+
+.products--grid {
+  display: flex;
+  flex-direction: column;
+  div {
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    h2, p {
+      margin: 0;
+    }
+  }
+}
+//tablets
+@media screen and (min-width: 40em) {
+  .products--grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+  }
+}
+//desktops
+@media screen and (min-width: 62em) {
+  .products--grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
