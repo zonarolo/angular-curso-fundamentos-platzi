@@ -1,3 +1,21 @@
+<h1>Class & Style</h1>
+<input type="text" #nameImput3="ngModel" [(ngModel)]="person.name" required />
+<p class="message-error" [class.invalid]="nameInput.invalid">El campo es requerido</p>
+<label>Nombre</label>
+<input type="text" #nameInput4="ngModel" [(ngModel)]="person.name" required />
+<p [style.font-style]="nameInput4.invalid ? 'italic' : 'normal'">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, laboriosam!</p>
+
+<div class="gridStyle">
+  <div>
+    <input type="text" #nameInput4="ngModel" [(ngModel)]="widthImg" required />
+  </div>
+  <div>
+    <img [style.width.px]="widthImg" [src]="person.avatar" [alt]="person.name">
+  </div>
+</div>
+
+<hr>
+
 <h1>ngSwitch</h1>
 <input type="text" [(ngModel)]="person.name" required />
 <div [ngSwitch]="person.name">

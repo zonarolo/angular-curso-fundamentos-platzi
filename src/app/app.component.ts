@@ -7,6 +7,7 @@ import { Product } from './product.model'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  widthImg = 10;
   name = 'Juan';
   age = 27;
   img = 'https://source.unsplash.com/random';
