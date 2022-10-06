@@ -20,6 +20,11 @@ export class AppComponent {
   emojis = [ '😂' , '🐦', '🐳','🌮', '💚'];
   names: string[] = ['Pedro', 'Maria', 'Angela', 'Yomi', 'Miguel'];
   newName = '';
+  box = {
+    width: 100,
+    height: 100,
+    background: 'red',
+  }
   products: Product[] = [
     {
       name: 'EL mejor juguete',
